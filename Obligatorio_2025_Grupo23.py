@@ -4,3 +4,7 @@ class Sistema:
         self.piezas = piezas
         self.maquinas = maquinas
         self.ordenes = []
+
+class Piezas:
+    def __init__(self,piezas):
+        self.piezas=piezas
