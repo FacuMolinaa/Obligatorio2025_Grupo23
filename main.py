@@ -1,4 +1,9 @@
 from entities.sistemas import Sistema
+from entities.cliente import Cliente
+from entities.Maquina import Maquina
+from entities.Piezas import Pieza
+from entities.Requerimiento import Requerimiento
+from entities.Pedido import Pedido
 from Exceptions.EntidadYaExiste import EntidadYaExiste
 from Exceptions.ExceptionPiezaYaExiste import ExceptionPiezaYaExiste
 
@@ -9,12 +14,12 @@ def main():
     while True:
         print ("Menu Principal:")
         print ("==================================")
-        print ("1. Registrar.")
-        print ("1.1 Registrar Cliente")
-        print ("1.2 Registrar Pieza")
-        print ("1.3 Registrar Máquina")
-        print ("1.4 Registrar Orden")
-        print("2. Listar.")
+        print ("== Menú Registrar ==")
+        print ("1. Registrar Cliente | Empresa.")
+        print ("1.1 Registrar Pieza")
+        print ("1.2 Registrar Máquina")
+        print ("1.3 Registrar Orden")
+        print(" == Menú Listar ==")
         print ("2.1 Listar Clientes")
         print ("2.2 Listar Piezas")
         print ("2.3 Listar Máquinas")
@@ -40,7 +45,7 @@ def main():
                 nombre = input ("Ingrese el nombre de la empresa: ")
                 telefono = input("Ingrese el teléfono de la empresa: ")
                 direccion = input("Ingrese la dirección de la empresa: ")
-        elif opcion == "2":
+        elif opcion == "1.1":
             nombre_pieza = input("Ingrese el nombre de la pieza: ")
             descripcion = input("Ingrese la descripción de la pieza: ")
             costo = float(input("Ingrese el costo de la pieza: "))
@@ -54,4 +59,10 @@ def main():
                 cantidad_disponible.append(cantidad_disponible)
             except ExceptionPiezaYaExiste as e:
                 print(f"Error al registrar pieza: {e}")
+        elif opcion == "1.2":
+            id_maquina = input ("Ingrese el ID de la máquina: ")
+
+if __name__ == "__main__":
+    main()
+
 
