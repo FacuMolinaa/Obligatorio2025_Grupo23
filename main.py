@@ -8,16 +8,20 @@ def main():
 
     while True:
         print ("Menu Principal:")
-        print ("1. Registrar Cliente")
-        print ("2. Registrar Pieza")
-        print ("3. Registrar Máquina")
-        print ("4. Registrar Orden")
-        print ("5. Consultar Cliente")
-        print ("6. Consultar Pieza")
-        print ("7. Consultar Máquina")
-        print ("8. Consultar Orden")
-        print ("9. Salir")
-        
+        print ("==================================")
+        print ("1. Registrar.")
+        print ("1.1 Registrar Cliente")
+        print ("1.2 Registrar Pieza")
+        print ("1.3 Registrar Máquina")
+        print ("1.4 Registrar Orden")
+        print("2. Listar.")
+        print ("2.1 Listar Clientes")
+        print ("2.2 Listar Piezas")
+        print ("2.3 Listar Máquinas")
+        print ("2.4 Listar Órdenes")
+        print ("3. Consultar Cliente")
+        print ("4. Salir")
+        print ("===================================")
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
