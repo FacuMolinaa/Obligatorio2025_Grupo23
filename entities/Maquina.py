@@ -1,5 +1,5 @@
 class Maquina:
-    def __init__(self, id_maquina, requerimiento, descripcion, estado, disponibilidad=True):
+    def __init__(self, id_maquina, requerimiento, descripcion, estado, disponibilidad):
         self.id_maquina = id_maquina
         self.descripcion = descripcion
         self.requerimiento = requerimiento

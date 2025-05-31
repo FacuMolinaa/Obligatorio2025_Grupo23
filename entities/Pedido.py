@@ -13,5 +13,3 @@ class Pedido:
         estados_validos = ["Pendiente", "En Proceso", "Completado", "Cancelado"]
         if nuevo_estado in estados_validos:
             self.estado = nuevo_estado
-        else:
-            raise ValueError(f"Estado inválido: {nuevo_estado}. Debe ser uno de {estados_validos}.")
