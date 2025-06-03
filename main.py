@@ -96,11 +96,10 @@ def main():
                 print("No hay clientes registrados.")
 
         elif opcion == "2.2":
-            piezas = piezas.listar_piezas()
-            if piezas:
-                print("Piezas registradas:")
-                for pieza in piezas:
-                    print(pieza)
+            piezas = sistema.listar_piezas()
+            print("Piezas registradas:")
+            for pieza in piezas:
+                print(f"Nombre: {pieza.nombre_pieza}, Descripción: {pieza.descripcion}, Costo: {pieza.costo}, Cantidad Disponible: {pieza.cantidad_disponible}")
             else:
                 print("No hay piezas registradas.")
         

@@ -1,3 +1,5 @@
+from entities.Piezas import Pieza
+
 class Sistema:
     def __init__(self):
         self.clientes = []
