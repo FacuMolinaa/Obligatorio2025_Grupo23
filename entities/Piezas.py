@@ -17,9 +17,10 @@ class Pieza:
         self.cantidad_disponible = cantidad_disponible
         self.nombre_pieza = nombre_pieza
     
-    def registrar_pieza(self):
-        self.piezas.append(self)
-        print(f"Pieza '{self.nombre_pieza}' registrada exitosamente.")
+    def registrar_pieza(self, pieza):
+        if pieza in self.piezas:
+            raise ValueError("La pieza ya está registrada.")
+        self.piezas.append(pieza)
     
     def listar_piezas(self):
         return self.piezas

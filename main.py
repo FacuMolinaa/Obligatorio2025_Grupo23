@@ -81,7 +81,7 @@ def main():
             id_pieza = input("Ingrese el ID de la pieza: ")
             cantidad_pieza = int(input("Ingrese la cantidad de piezas: "))
             try:
-                sistema.registrar_pedido(id_pedido, id_cliente, id_maquina, id_pieza, cantidad_pieza)
+                sistema.registrar_orden(orden = Pedido (id_pedido = id_pedido, cliente = sistema.buscar_cliente(id_cliente), maquina = sistema.buscar_maquina(id_maquina), pieza = sistema.buscar_pieza(id_pieza), cantidad = cantidad_pieza))
                 print("Pedido registrado exitosamente.")
             except Exception as e:
                 print(f"Error al registrar pedido: {e}")
@@ -96,12 +96,15 @@ def main():
                 print("No hay clientes registrados.")
 
         elif opcion == "2.2":
-            piezas = sistema.listar_piezas()
-            print("Piezas registradas:")
-            for pieza in piezas:
-                print(f"Nombre: {pieza.nombre_pieza}, Descripción: {pieza.descripcion}, Costo: {pieza.costo}, Cantidad Disponible: {pieza.cantidad_disponible}")
-            else:
-                print("No hay piezas registradas.")
+            try:
+                piezas = sistema.listar_piezas()
+                print("Piezas registradas:")
+                for pieza in piezas:
+                    print(f"Nombre: {pieza.nombre_pieza}, Descripción: {pieza.descripcion}, Costo: {pieza.costo}, Cantidad Disponible: {pieza.cantidad_disponible}")
+                else:
+                    print("No hay piezas registradas.")
+            except ValueError as e:
+                print(e)
         
         elif opcion == "2.3":
             maquinas = sistema.listar_maquinas()
@@ -113,7 +116,7 @@ def main():
                 print("No hay máquinas registradas.")
         
         elif opcion == "2.4":
-            pedidos = sistema.listar_pedidos()
+            pedidos = sistema.listar_ordenes()
             if pedidos:
                 print("Órdenes registradas:")
                 for pedido in pedidos:
@@ -123,7 +126,7 @@ def main():
         
         elif opcion == "3":
             id_cliente = input("Ingrese el ID del cliente a consultar: ")
-            cliente = sistema.consultar_cliente(id_cliente)
+            cliente = sistema.buscar_cliente(id_cliente)
             if cliente:
                 print("Cliente encontrado:")
                 print(cliente)

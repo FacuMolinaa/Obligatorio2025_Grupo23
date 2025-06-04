@@ -7,8 +7,10 @@ class Pedido:
         self.estado = "Pendiente" 
         self.fecha_registro = None
         self.fecha_entrega = None
+    
     def agregar_requerimiento(self, requerimiento):
         self.requerimientos.append(requerimiento)
+    
     def cambiar_estado(self, nuevo_estado):
         estados_validos = ["Pendiente", "En Proceso", "Completado", "Cancelado"]
         if nuevo_estado in estados_validos:
